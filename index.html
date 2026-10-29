@@ -416,6 +416,20 @@ label{display:block;font-size:12px;color:var(--mu);margin:12px 0 6px;font-weight
 .sw-custom b{display:block;font-size:14px}
 .sw-custom small{color:var(--mu);font-size:12px}
 .sw-custom input{width:44px;height:36px;border:0;background:none;padding:0;cursor:pointer}
+
+/* ===== Handy: unten ohne Lücke, Inhalt nicht unter der Leiste ===== */
+@media(max-width:499px){
+ html,body{height:100dvh}
+ #app{height:100dvh}
+ main{padding-bottom:calc(136px + env(safe-area-inset-bottom,0px))}
+}
+
+/* ===== Handy-Vollbild: App füllt den ganzen Bildschirm, Inhalt scrollt ===== */
+@media(max-width:499px){
+ html,body{height:100%;background:#0b1114;overflow:hidden}
+ #app{position:fixed;inset:0;height:auto;width:100%;max-width:none;border-radius:0;border:0;box-shadow:none}
+ main{-webkit-overflow-scrolling:touch;touch-action:pan-y;overscroll-behavior:contain;min-height:0}
+}
 </style>
 </head>
 <body>
